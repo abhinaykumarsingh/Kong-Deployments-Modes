@@ -1,0 +1,18 @@
+_format_version: "3.0"
+services:
+  - name: example-service
+    url: https://httpbin.org
+    routes:
+      - name: example-route
+        paths:
+          - /example
+        plugins:
+          - name: key-auth
+            config:
+              key_names:
+                - apikey
+
+consumers:
+  - username: demo-user
+    keyauth_credentials:
+      - key: abhinay

@@ -1,0 +1,3 @@
+kong-traditional/data/postgres/
+.env
+*.log
