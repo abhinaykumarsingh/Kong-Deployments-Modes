@@ -1,4 +1,2 @@
-kong-hybrid/data/postgres/
-kong-hybrid/certs
-.env
-*.log
+data/
+certs/
