@@ -75,3 +75,13 @@ docker compose down -v
 - Run migrations only once
 - Data plane does not use DB
 - Ignore minor warnings in logs
+
+## Sync Kong Configuration with decK
+
+To validate, diff, and sync your configuration to Kong using decK, run:
+
+```
+deck gateway validate kong.yaml
+deck gateway diff kong.yaml --kong-addr http://localhost:8001
+deck gateway sync kong.yaml --kong-addr http://localhost:8001
+```

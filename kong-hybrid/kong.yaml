@@ -1,0 +1,31 @@
+_format_version: "3.0"
+
+services:
+  - name: httpbin-service
+    url: https://httpbin.org
+    routes:
+      - name: httpbin-route
+        paths:
+          - /test
+        strip_path: true
+
+plugins:
+  - name: rate-limiting
+    service: httpbin-service
+    config:
+      minute: 5
+      policy: local
+
+  - name: key-auth
+    service: httpbin-service
+    config:
+      key_names:
+        - apikey
+      key_in_header: true
+      key_in_query: false
+      key_in_body: false
+
+consumers:
+  - username: abhinay
+    keyauth_credentials:
+      - key: abhikey
