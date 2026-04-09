@@ -4,7 +4,7 @@ resource "konnect_gateway_consumer" "user1" {
 }
 
 resource "konnect_gateway_key_auth" "my_keyauth" {
-  key              = "abhikey"
+  key              = "spiderkey"
   consumer_id      = konnect_gateway_consumer.user1.id
   control_plane_id = var.control_plane_id
 }
